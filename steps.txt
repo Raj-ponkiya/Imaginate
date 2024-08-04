@@ -1,0 +1,6 @@
+1.config typescript structure
+2.config global.css 
+3.setup nextjs route
+	App->create folder in bracket -> layout.tsx
+	rafce-create basic strcture of react
+4.clerk->user authentication
