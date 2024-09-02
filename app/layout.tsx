@@ -22,17 +22,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{variables:{colorPrimary:'#624cf5'}}}>
+    <ClerkProvider appearance={{variables:{colorPrimary:'#624cf5'}}} afterSignOutUrl='/'>
        <html lang="en">
          <body className={cn("font-IBMPlex antialiased",IBMPlex.variable)}>
-         <header>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
+  
           {/*comment for new section*/}
           {children}
          </body>
