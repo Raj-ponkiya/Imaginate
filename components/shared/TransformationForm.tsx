@@ -1,7 +1,7 @@
 "use client"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { object, z } from "zod";
+import { z } from "zod";
 import {
   Select,
   SelectContent,
@@ -33,7 +33,7 @@ export const formSchema = z.object({
   publicId:z.string(),
 });
 
-const Transformation = ({ action, data = null, userId, type, creditBalance,config=null }: TransformationFormProps) => {
+const TransformationForm = ({ action, data = null, userId, type, creditBalance,config=null }: TransformationFormProps) => {
   const TransformationType = transformationTypes[type];
   const [image, setImage] = useState(data);
   const [newTransformation, setNewTransformation] = useState<Transformations | null>(null);
@@ -165,4 +165,4 @@ const onInputChangeHandler= (fieldName:string,value:string,type: string,onChange
   );
 };
 
-export default Transformation;
+export default TransformationForm;

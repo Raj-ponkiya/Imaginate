@@ -1,4 +1,5 @@
 import Header from '@/components/shared/Header'
+import TransformationForm from '@/components/shared/TransformationForm';
 import { transformationTypes } from '@/constants'
 
 
@@ -9,8 +10,16 @@ const AddTransformationTypePage = async ({params:{type}}:
   const transformation=transformationTypes[type];
   
   return ( 
+    <>
       <Header title={transformation.title} 
-       subtitle={transformation.subTitle}/>
+       subtitle={transformation.subTitle}
+       />
+
+      <TransformationForm action={'Add'} userId={''} type={'restore'} creditBalance={0} />
+       
+
+       
+    </>
   )
 }
 
