@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
-
-import { clerkClient, WebhookEvent } from "@clerk/nextjs/server";
+import {  clerkClient,WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook } from "svix";
@@ -61,6 +60,9 @@ export async function POST(req: Request) {
   // CREATE
   if (eventType === "user.created") {
     const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
+
+    console.log(evt.data);
+    
 
     const user = {
       clerkId: id,
