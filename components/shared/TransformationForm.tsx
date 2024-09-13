@@ -87,7 +87,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance,c
         width: image?.width,
         height: image?.height,
         config: transformationConfig,
-        secureURL:image?.secureUrl,
+        secureURL:image?.secureURL ,
       }
       if(action==='Add'){
         try {
@@ -98,7 +98,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance,c
           })
           if(newImage){
             form.reset()
-            setImage(data)
+            setImage(data) 
             router.push(`/transformations/${newImage._id}`)
           }
         } catch (error) {
@@ -132,8 +132,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance,c
 
 
 
-
-const onSelectFieldHandler = (value: string, onChangeField: (value: string) => void) => {
+ const onSelectFieldHandler = (value: string, onChangeField: (value: string) => void) => {
     const imageSize = aspectRatioOptions[value as AspectRatioKey]
     setImage((prevState:any)=>({
       ...prevState,
