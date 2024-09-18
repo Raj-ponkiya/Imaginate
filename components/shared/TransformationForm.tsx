@@ -156,8 +156,8 @@ const onInputChangeHandler = (fieldName: string, value: string, type: string, on
         [fieldName === 'prompt' ? 'prompt' : 'to']: value,
       },
     }));
-    onChangeField(value);
-  }, 1000);
+  }, 1000)();
+  return onChangeField(value);
 };
 //todo:return to update creditFee to something else
 const onTransformHandler=async()=>{
@@ -214,7 +214,7 @@ const onTransformHandler=async()=>{
             render={({ field }) => (
               <Select onValueChange={(value) =>
                 onSelectFieldHandler(value, field.onChange)
-              }>
+              }value={field.value}>
                 <SelectTrigger className="select=field">
                   <SelectValue placeholder="Select size" />
                 </SelectTrigger>
@@ -241,7 +241,7 @@ const onTransformHandler=async()=>{
               
 
             className="w-full"
-            render={(({field})=>(
+            render={({field})=>(
               <Input
                   value={field.value}
                   className="input-field"
@@ -252,7 +252,7 @@ const onTransformHandler=async()=>{
                     field.onChange
                   )}
                   />
-            ))}
+            )}
             />
 
             {type ==='recolor' &&(
